@@ -1,4 +1,5 @@
 import Box from "../box";
+import {url} from "../../global";
 
 interface ProdutoProps {
 	preco?: number;
@@ -17,7 +18,7 @@ function Produto({
 		<Box className="hover:scale-105 transition-all">
 			<div
 				style={{
-					backgroundImage: `url(${image})`,
+					backgroundImage: url(image),
 					height: "20rem",
 				}}
 				className={`

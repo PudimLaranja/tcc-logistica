@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { url } from "../../global";
 
 interface CardProps {
 	name: string;
@@ -31,7 +32,7 @@ function HubCard({
 					transition-all
 					`}
 			style={{
-				backgroundImage: (()=> {return `url(${image})`})(),
+				backgroundImage: url(image),
 			}}
 		>
 			<div

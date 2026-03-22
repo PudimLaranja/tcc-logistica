@@ -1,9 +1,9 @@
 import type { ComponentPropsWithRef } from "react";
-
+import { main_endpoint } from "../global";
 
 const Logo = ({
 	className = 'size-16',
-	src = "/imgs/logo.jpg",
+	src = `/${main_endpoint}/imgs/logo.jpg`,
 	alt = "Logo da pizzaria",
 	...props
 }: ComponentPropsWithRef<'img'>) => {

@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import { url } from "../../global";
 
 function Hero() {
 
@@ -48,7 +49,7 @@ function Hero() {
 			</div>
 			<div
 				style={{
-					backgroundImage: `url("/imgs/pizza2.jpg")`,
+					backgroundImage: url("/imgs/pizza2.jpg"),
 					backgroundSize: "cover",
 					height: "100%",
 					width: "100%",

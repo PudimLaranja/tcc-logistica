@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
+* {
+	--background-image: url("/tcc-logistica/imgs/background.webp");
+}
+
 @theme {
-	--color-primaria: #24574E;
+	--color-primaria: #24574e;
 	--color-secundaria: #0d4031;
 
 	--color-contraste-1: #a64029;
@@ -18,8 +22,7 @@
 			/* Base */
 			10% 50%,
 			/* Ponta Esquerda */
-			0% 0%
-		);
+			0% 0%);
 }
 
 body {
@@ -27,7 +30,7 @@ body {
 	width: 100vw;
 	height: 100vh;
 	background-position-y: 10%;
-	background-image: url("/imgs/background.webp");
+	background-image: var(--background-image);
 	background-size: cover;
 }
 

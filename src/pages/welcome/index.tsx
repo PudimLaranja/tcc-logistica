@@ -1,6 +1,6 @@
 import Box from "../../components/box";
 import Header from "../../components/header";
-import Footer from "./footer";
+import Footer from "../../components/footer";
 import Help from "./help";
 import Hero from "./hero";
 import Hub from "./hub";

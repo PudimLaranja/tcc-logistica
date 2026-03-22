@@ -25,7 +25,7 @@ function HubCard({
 		<div
 			className={`
 					w-full
-					h-full
+					h-200
 					bg-cover
 					hover:scale-110
 					hover:rounded-xl
@@ -99,8 +99,9 @@ function Hub() {
 			className={`
 			flex
 			justify-between
-			h-200
-			
+			h-auto
+			flex-col
+			lg:flex-row	
 		`}
 		>
 			<HubCard name="Pizzas Saborosas" image="/imgs/pizza1.jpg">

@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import Box from "./box";
 import Logo from "./logo";
 import { Phone, Star, User } from "lucide-react";
+import { main_endpoint } from "../global";
+import type { ReactNode } from "react";
 
-function Header() {
+
+interface PropsHeader {
+	pagina?:string
+}
+
+function Header({pagina}:PropsHeader):ReactNode {
 	const titulos: string = `
 		text-3xl
 		font-extrabold
@@ -16,6 +24,7 @@ function Header() {
 		text-cyan-100
 		hover:text-white
 		hover:bg-primaria
+		hover:cursor-pointer
 		hover:scale-105
 		transition-all
 		p-4
@@ -23,6 +32,13 @@ function Header() {
 		rounded-xl
 `;
 
+	const nav = useNavigate();
+	function navigate(path:string):void {nav("/"+main_endpoint+path)}
+
+
+	function toWelcome() {navigate("/welcome")}
+	function toSobre() {navigate("/sobre")}
+	function toHubAdmin() {navigate("/hubadmin")}
 
 	return (
 		<div>
@@ -35,7 +51,15 @@ function Header() {
 						items-center
 			`}
 				>
-					<Logo className="size-24" />
+					<button
+						onClick={toWelcome}
+						className={`
+						hover:scale-105
+						hover:opacity-90
+						hover:cursor-pointer
+					`}>
+						<Logo className="size-24"/>
+					</button>
 					<div
 						className={`
 						p-6
@@ -48,9 +72,18 @@ function Header() {
 						<h1 className={titulos}>Papa's Pizzaria</h1>
 					</div>
 					<nav className="flex gap-10 mr-10">
-						<a href="" className={buttons}><Star />Sobre Nós</a>
-						<a href="" className={buttons}><Phone />Contato</a>
-						<a href="" className={buttons}><User />Login</a>
+						<button className={buttons} onClick={toSobre}>
+							<Star />
+							Sobre Nós
+						</button>
+						<button className={buttons}>
+							<Phone />
+							Contato
+						</button>
+						<button onClick={toHubAdmin} className={buttons}>
+							{pagina === "admin" ? <Logo className="size-10"/> : <User/>}
+							{pagina === "admin" ? "Admin" : "Login"}
+						</button>
 					</nav>
 				</header>
 			</Box>

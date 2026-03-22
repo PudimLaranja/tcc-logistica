@@ -5,8 +5,9 @@
 }
 
 @theme {
-	--color-primaria: #24574e;
+	--color-primaria: #1D4F3B;
 	--color-secundaria: #0d4031;
+	--color-terciaria: #063833;
 
 	--color-contraste-1: #a64029;
 	--color-contraste-2: #d9831a;

@@ -9,19 +9,42 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +1 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/components/welcome/help.tsx
-badd +5 src/App.tsx
-badd +9 src/main.tsx
-badd +31 src/components/welcome.tsx
+badd +19 src/App.tsx
+badd +4 src/main.tsx
 badd +1 src/components/logo.tsx
-badd +1 src/style/style.css
-badd +1 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/components/welcome/hero.tsx
-badd +1 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/components/welcome/hub.tsx
+badd +22 src/style/style.css
+badd +72 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/pages/welcome/help.tsx
+badd +104 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/pages/welcome/hub.tsx
+badd +85 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/components/header.tsx
+badd +7 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/pages/welcome/index.tsx
+badd +13 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/pages/sobre/index.tsx
+badd +6 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/style/style.ts
+badd +2 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/components/footer.tsx
+badd +8 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/pages/hubadmin/index.tsx
+badd +3 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/pages/ticket/index.tsx
 argglobal
 %argdel
+let s:save_splitbelow = &splitbelow
+let s:save_splitright = &splitright
+set splitbelow splitright
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+let &splitbelow = s:save_splitbelow
+let &splitright = s:save_splitright
+wincmd t
+let s:save_winminheight = &winminheight
+let s:save_winminwidth = &winminwidth
+set winminheight=0
+set winheight=1
+set winminwidth=0
+set winwidth=1
+exe '1resize ' . ((&lines * 38 + 27) / 55)
+exe '2resize ' . ((&lines * 13 + 27) / 55)
 argglobal
 enew
-balt ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/components/welcome/hub.tsx
+balt src/main.tsx
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -30,6 +53,29 @@ setlocal foldlevel=0
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldenable
+wincmd w
+argglobal
+if bufexists(fnamemodify("term://~/Documentos/Embraer/curso/docs/trabalho_pizzaria//3932:/bin/bash;\#toggleterm\#1", ":p")) | buffer term://~/Documentos/Embraer/curso/docs/trabalho_pizzaria//3932:/bin/bash;\#toggleterm\#1 | else | edit term://~/Documentos/Embraer/curso/docs/trabalho_pizzaria//3932:/bin/bash;\#toggleterm\#1 | endif
+if &buftype ==# 'terminal'
+  silent file term://~/Documentos/Embraer/curso/docs/trabalho_pizzaria//3932:/bin/bash;\#toggleterm\#1
+endif
+setlocal foldmethod=manual
+setlocal foldexpr=0
+setlocal foldmarker={{{,}}}
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldenable
+let s:l = 602 - ((12 * winheight(0) + 6) / 13)
+if s:l < 1 | let s:l = 1 | endif
+keepjumps exe s:l
+normal! zt
+keepjumps 602
+normal! 0
+wincmd w
+exe '1resize ' . ((&lines * 38 + 27) / 55)
+exe '2resize ' . ((&lines * 13 + 27) / 55)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
@@ -37,6 +83,8 @@ endif
 unlet! s:wipebuf
 set winheight=1 winwidth=20
 let &shortmess = s:shortmess_save
+let &winminheight = s:save_winminheight
+let &winminwidth = s:save_winminwidth
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)

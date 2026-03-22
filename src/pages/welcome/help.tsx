@@ -68,7 +68,8 @@ function Help() {
 			<div
 				className={`
 			grid
-			grid-cols-2
+			grid-cols-1
+			lg:grid-cols-2
 			bg-red-800
 			p-3
 			rounded-4xl

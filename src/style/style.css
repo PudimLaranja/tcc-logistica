@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+	--color-primaria: #24574E;
+	--color-secundaria: #0d4031;
+
+	--color-contraste-1: #a64029;
+	--color-contraste-2: #d9831a;
+	--color-contraste-3: #f2cf66;
+
+	--clip-shape-fita: polygon(10% 0,
+			100% 0,
+			/* Topo */
+			90% 50%,
+			/* Ponta Direita */
+			100% 100%,
+			0% 100%,
+			/* Base */
+			10% 50%,
+			/* Ponta Esquerda */
+			0% 0%
+		);
+}
+
+body {
+	backdrop-filter: blur(2px);
+	width: 100vw;
+	height: 100vh;
+	background-position-y: 10%;
+	background-image: url("/imgs/background.webp");
+	background-size: cover;
+}
+
+#titulo_container {
+	clip-path: var(--clip-shape-fita);
+}

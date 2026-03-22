@@ -1,6 +1,6 @@
 import Sobre from "./pages/sobre";
 import Welcome from "./pages/welcome";
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter, useNavigate } from "react-router-dom";
 import "./style/style.css";
 import { main_endpoint } from "./global";
 import HubAdmin from "./pages/hubadmin";
@@ -13,7 +13,8 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route path={main_endpoint}>
-						<Route path="welcome" element={<Welcome />} />
+						<Route path="" element={<Welcome/>}/>
+						<Route path="welcome" element={<Welcome/>}/>
 						<Route path="sobre" element={<Sobre />} />
 						<Route path="hubadmin" element={<HubAdmin/>}/>
 						<Route path="ticket" element={<Ticket/>}/>

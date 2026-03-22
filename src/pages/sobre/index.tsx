@@ -3,7 +3,6 @@ import Box from "../../components/box";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { main_endpoint, url } from "../../global";
-import type { Proportions } from "lucide-react";
 import React from "react";
 
 interface CreditoProps {

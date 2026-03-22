@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Box from "../box";
+import Box from "../../components/box";
 
 function Footer():ReactNode {
 

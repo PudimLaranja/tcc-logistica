@@ -1,4 +1,4 @@
-import Welcome from './components/welcome'
+import Welcome from './pages/welcome'
 import './style/style.css'
 
 function App() {

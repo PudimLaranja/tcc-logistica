@@ -1,16 +1,7 @@
-import type { CSSProperties } from "react";
 import { url } from "../../global";
+import Outline from "../../components/outline";
 
 function Hero() {
-
-	function textOutline(width:string):CSSProperties {
-		return {
-			WebkitTextStrokeColor: "black",
-			WebkitTextStrokeWidth: width
-		}
-	}
-
-
 	return (
 		<section
 			className={`
@@ -28,8 +19,10 @@ function Hero() {
 					textWrap: "nowrap",
 				}}
 			>
-				<h1 style={(()=>{return textOutline("3px")})()} className="text-7xl font-extrabold">Pizza a lenha</h1>
-				<h2 style={(()=>{return textOutline("2px")})()} className="ml-4 text-3xl font-extrabold">A melhor da região</h2>
+				<Outline>
+					<h1 className="text-7xl font-extrabold">Pizza a lenha</h1>
+					<h2 className="ml-4 text-3xl font-extrabold">A melhor da região</h2>
+				</Outline>
 				<button
 					className={`
 						bg-contraste-2
@@ -55,7 +48,7 @@ function Hero() {
 					width: "100%",
 					marginLeft: "-200px",
 					maskImage: "linear-gradient(to right, transparent 0%, black 150px)",
-					borderRadius: "15px"
+					borderRadius: "15px",
 				}}
 			></div>
 		</section>

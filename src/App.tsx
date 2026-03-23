@@ -1,8 +1,7 @@
 import Sobre from "./pages/sobre";
 import Welcome from "./pages/welcome";
-import { Routes, Route, BrowserRouter, useNavigate } from "react-router-dom";
+import { Routes, Route, HashRouter} from "react-router-dom";
 import "./style/style.css";
-import { main_endpoint } from "./global";
 import HubAdmin from "./pages/hubadmin";
 import Ticket from "./pages/ticket";
 
@@ -10,17 +9,15 @@ import Ticket from "./pages/ticket";
 function App() {
 	return (
 		<>
-			<BrowserRouter>
+			<HashRouter>
 				<Routes>
-					<Route path={main_endpoint}>
-						<Route path="" element={<Welcome/>}/>
-						<Route path="welcome" element={<Welcome/>}/>
-						<Route path="sobre" element={<Sobre />} />
-						<Route path="hubadmin" element={<HubAdmin/>}/>
-						<Route path="ticket" element={<Ticket/>}/>
-					</Route>
+					<Route path="/" element={<Welcome/>}/>
+					<Route path="/sobre" element={<Sobre />} />
+					<Route path="/hubadmin" element={<HubAdmin/>}/>
+					<Route path="/ticket" element={<Ticket/>}/>
+					<Route path="*" element={<Welcome/>}/>
 				</Routes>
-			</BrowserRouter>
+			</HashRouter>
 		</>
 	);
 }

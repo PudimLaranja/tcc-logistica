@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import Box from "./box";
 import Logo from "./logo";
 import { Phone, Star, User } from "lucide-react";
-import { main_endpoint } from "../global";
 import type { ReactNode } from "react";
 
 
@@ -33,12 +32,11 @@ function Header({pagina}:PropsHeader):ReactNode {
 `;
 
 	const nav = useNavigate();
-	function navigate(path:string):void {nav("/"+main_endpoint+path)}
 
 
-	function toWelcome() {navigate("/welcome")}
-	function toSobre() {navigate("/sobre")}
-	function toHubAdmin() {navigate("/hubadmin")}
+	function toWelcome() {nav("/")}
+	function toSobre() {nav("/sobre")}
+	function toHubAdmin() {nav("/hubadmin")}
 
 	return (
 		<div>

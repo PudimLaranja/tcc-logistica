@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef, ReactNode } from "react";
 
-interface Props extends ComponentPropsWithRef<'div'> {
+interface BoxProps extends ComponentPropsWithRef<'div'> {
 	children?:ReactNode,
 	bg_color?:string
 };
@@ -11,11 +11,11 @@ const Box = ({
 	bg_color = "bg-primaria",
 	...props
 
-}:Props) => {
+}:BoxProps) => {
 	return <div
 		className={
 			`
-				${bg_color}
+	${bg_color}
 				*:p-6
 				m-5
 				rounded-2xl
@@ -33,4 +33,5 @@ const Box = ({
 	</div>
 }
 
+export {type BoxProps};
 export default Box;

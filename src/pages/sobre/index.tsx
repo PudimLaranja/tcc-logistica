@@ -1,11 +1,11 @@
-import type { ComponentPropsWithRef, ReactNode } from "react";
+import type {  ReactNode } from "react";
 import Box from "../../components/box";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import { main_endpoint, url } from "../../global";
-import React from "react";
+import Fliper, { type Flipable } from "../../components/flipper";
 
-interface CreditoProps {
+interface CreditoProps extends Flipable{
 	children?: ReactNode;
 	image?: string;
 	nome?: string;
@@ -56,26 +56,6 @@ function Credito({
 	);
 }
 
-interface FliperProps extends ComponentPropsWithRef<"div"> {
-	children?: ReactNode;
-}
-
-function Fliper({ children = <></>, ...props }: FliperProps): ReactNode {
-	return (
-		<div {...props}>
-			{React.Children.map(children, (child: ReactNode, idx: number) => {
-				if (React.isValidElement(child)) {
-					const shouldFlip = idx % 2 !== 0;
-
-					return React.cloneElement(child as React.ReactElement<CreditoProps>, {
-						flip: shouldFlip,
-					});
-				}
-				return child;
-			})}
-		</div>
-	);
-}
 
 function Sobre(): ReactNode {
 	return (

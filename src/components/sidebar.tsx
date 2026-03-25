@@ -1,16 +1,16 @@
-import type { ReactNode } from "react";
-import Box from "../../components/box";
-import Logo from "../../components/logo";
+import { type ReactNode } from "react";
+import Box from "./box";
+import Logo from "./logo";
 import { Link } from "react-router-dom";
 import { ChartColumnIncreasing, Home,Star,Ticket,Cog,LogOut, User, ShelvingUnit } from "lucide-react";
 
-import Fliper, { type Flipable } from "../../components/flipper";
-import React from "react";
+import Fliper, { type Flipable } from "./flipper";
 
 interface SideButtonProps extends Flipable {
 	nome?: string;
 	icon?: ReactNode;
 	to?: string;
+	children?:ReactNode;
 }
 
 function SideButton({
@@ -18,6 +18,7 @@ function SideButton({
 	icon = <></>,
 	to = "",
 	flip = false,
+	children = (<></>),
 }: SideButtonProps): ReactNode {
 	return (
 		<li
@@ -26,6 +27,7 @@ function SideButton({
 			<Link to={to} className="flex items-center text-3xl gap-3">
 				{icon}
 				{nome}
+				{children}
 			</Link>
 		</li>
 	);
@@ -54,7 +56,7 @@ function Sidebar(): ReactNode {
 							<SideButton nome="Home" icon={<Home />} to="/" />
 							<SideButton nome="DashBoard" icon={<ChartColumnIncreasing/>} to="/hubadmin" />
 							<SideButton nome="Sobre" icon={<Star/>} to="/sobre" />
-							<SideButton nome="Pedidos" icon={<Ticket/>} to="/ticket" />
+							<SideButton nome="Pedidos" icon={<Ticket/>} to="/ticket"><div className="bg-contraste-3 rounded-full text-black p-1">1</div></SideButton>
 							<SideButton nome="Funcionários" icon={<User/>} to="" />
 							<SideButton nome="Estoque" icon={<ShelvingUnit/>} to="" />
 						</Fliper>

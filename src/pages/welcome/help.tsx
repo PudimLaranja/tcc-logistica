@@ -1,6 +1,6 @@
 import Box from "../../components/box";
 import Outline from "../../components/outline";
-import { url } from "../../global";
+import { Precos, url } from "../../global";
 
 interface ProdutoProps {
 	preco?: number;
@@ -79,26 +79,31 @@ function Help() {
 					nome="Pizza de Mozzarella"
 					image="/imgs/pizza_mozzarella.jpeg"
 					desc="Pizza feita com queijo mussarela."
+					preco={Precos.mozzarella}
 				/>
 				<Produto
 					nome="Pizza Portuguesa"
 					image="/imgs/pizza_portuguesa.avif"
 					desc="Pizza com sabores lusitanos. Presunto, ovos cozidos, cebola e azeitona."
+					preco={Precos.portuguesa}
 				/>
 				<Produto
 					nome="Pizza Rúcula"
 					image="/imgs/pizza_rucula.jpg"
 					desc="Uma pizza que combina muçarela com folhas frescas de rúcula."
+					preco={Precos.rucula}
 				/>
 				<Produto
 					nome="Pizza Quatro Queijos"
 					image="/imgs/pizza_quatro_queijos.jpeg"
 					desc="Pizza com quatro queijos derretidos juntos com molho de tomate."
+					preco={Precos.quatro_queijos}
 				/>
 				<Produto
 					nome="Pizza Calabresa"
 					image="/imgs/pizza_calabresa.jpg"
 					desc="Uma pizza com calabresa, queijo e cebola."
+					preco={Precos.calabresa}
 				/>
 			</div>
 		</section>

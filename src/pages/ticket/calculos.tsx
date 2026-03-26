@@ -25,7 +25,7 @@ function Calculos(): ReactNode {
 		<div>
 			<br />
 			<Message user={4}>
-				Bom primeiro vamos considerar o preço de nossas pizzas
+				Bom primeiro vamos considerar o preço de nossas pizzas:
 				<div className="flex justify-center w-full">
 					<Table
 						className="min-w-90 w-1/2"
@@ -39,7 +39,7 @@ function Calculos(): ReactNode {
 						]}
 					/>
 				</div>
-				Cada pizza além de seus valores iniciais (Mão de obra <b>{mao_de_obra.toFixed(2)}R$</b> e e
+				Cada pizza além de seus valores iniciais (Mão de obra <b>{mao_de_obra.toFixed(2)}R$</b> e
 				margem de lucro <b>{lucro.toFixed(2)}R$</b>) elas tem os{" "}
 				<Highlight>valores dos seus ingredientes:</Highlight>
 				<div className="grid grid-cols-1 xl:grid-cols-2 mt-10 *:bg-secundaria *:p-1 *:rounded-2xl gap-3   *:min-w-10 *:w-[95%]">
@@ -76,7 +76,7 @@ function Calculos(): ReactNode {
 			</Message>
 			<Message user={0}>
 				Como a encomenda é bem grande podemos diminuir a margem de lucro de <b>{Precos.getf(lucro)}</b> 
-				<b> </b>para <b>{Precos.getf(lucro - desconto)}</b>, com a intenção de tornar a oferta mais atraente!<br/> 
+				<b> </b>para <b>{Precos.getf(lucro - desconto)}</b>, aplicando logística de escala com a intenção de tornar a oferta mais atraente!<br/> 
 				Os preços ficariam assim:
 				{getPizzasDescountTable()}
 			</Message>
@@ -84,10 +84,10 @@ function Calculos(): ReactNode {
 			<Message user={2}>E quanto fica a questão de alugar o equipamento?</Message>
 			<Message user={1}>Deixo dar uma olhada</Message>
 			<Message user={1}>
-				Okay gente acredito se a gente planejar corretamento o processo podemos usar esse fogão <a 
+				Okay gente acredito que se planejarmos corretamente o processo podemos usar esse fogão <a 
 					href="https://www.lojametavila.com.br/produto/forno-de-pizza-a-lenha-garden-napoli-810ex-grande-preto-150218"
 					className="text-blue-400"
-				><u>aqui</u></a>
+				><u>aqui.</u></a>
 				<div className="p-6 w-full flex justify-center bg-secundaria rounded-4xl *:rounded-4xl mt-4">
 					<img className="size-1/2"
 				src="https://churraqueirametavila.fbitsstatic.net/img/p/forno-de-pizza-a-lenha-garden-napoli-810ex-grande-preto-150218/336734.jpg?v=202602100914" 
@@ -101,18 +101,18 @@ function Calculos(): ReactNode {
 			</Message>
 			<Message user={1}>
 				Eu também conversei com os nossos cozinheiros e eles disseram que conseguem facilmente fazer <Highlight>40 pizzas por hora.</Highlight><br/>
-				Então se vamos ter um tempo de 5 horas de preparo mas vamos ter <Highlight>5 horas</Highlight> de evento para <Highlight>500</Highlight> pizas
+				Então se vamos ter um tempo de 5 horas de preparo, mas vamos ter <Highlight>5 horas</Highlight> de evento para <Highlight>500</Highlight> pizas
 				precisamos fazer <Highlight>100 pizzas por hora</Highlight>, então se com <Highlight>1</Highlight> desse forno conseguimos 
 				fazer <Highlight>40 pizzas por hora,</Highlight>
 				com <Highlight>3</Highlight> dessas unidades conseguimos fazer <Highlight>120 por hora</Highlight>. O que é perfeito considerando possíveis atrasos.
 			</Message>
 			<Highlight></Highlight>
-			<Message user={1}>E o alugues desses três fornos fica <Highlight>{Precos.getf(aluguel_fogao * 3)}.</Highlight></Message>
+			<Message user={1}>E o aluguel desses três fornos fica <Highlight>{Precos.getf(aluguel_fogao * 3)}.</Highlight></Message>
 
 
 			<Message user={3}>O preço é bem elevado mas levando em conta a velocidade para fazer pizzas com esses fornos vale a pena.</Message>
 			<Message user={2}>
-				Também vamos precisar de mesas para conseguir ter espaço para montar as pizzas, deixar as massas para descongelar e apoiar os fornos.
+				Também vamos precisar de mesas para conseguir ter espaço para: montar as pizzas, deixar as massas para descongelar e apoiar os fornos.
 			</Message>
 			<Message user={2}>
 				Acho que esse tipo de mesa deve ser o ideal: <a className="text-blue-400"
@@ -129,9 +129,10 @@ function Calculos(): ReactNode {
 			<Message user={0}>Caminhão?</Message>
 			<Message user={2}>
 				Sim o melhor jeito de transportar tanto quanto as mesas, tanto quanto os fogões é de caminhão.<br/>
-				Além disso se alugarmos um caminhão poderemos buscar os equipamentos alugados nós mesmos e evitar frete de entrega dos equipamentos e devolução deles, pois podemos fazer tudo no mesmo dia com o mesmo caminhão.				
+				Além disso se alugarmos um caminhão poderemos buscar os equipamentos alugados nós mesmos e evitar frete de entrega dos equipamentos 
+				e devolução deles, pois podemos fazer tudo no mesmo dia com o mesmo caminhão.				
 			</Message>
-			<Message>Certo vamos precisar de 8 mesas já explico o porque;</Message>
+			<Message>Certo vamos precisar de 8 mesas;</Message>
 			<Message user={2}>
 				Ok então vai ficar:
 				<Table 
@@ -152,7 +153,8 @@ function Calculos(): ReactNode {
 			</Message>
 
 			<Message user={0}>
-				E juntando tudo teremos um valor total de <Highlight>{Precos.getf(PrecosComDesconto.sum() + aluguel_total)}</Highlight> para mandar para o cliente.<br/>
+				E juntando tudo teremos um valor total de <Highlight>{Precos.getf(PrecosComDesconto.sum() + aluguel_total)}</Highlight>
+				{" "}para mandar para o cliente.<br/>
 				Com <Highlight>{Precos.getf(preco_total - preco_semlucro)} de lucro.</Highlight><br/>
 			</Message>
 		</div>

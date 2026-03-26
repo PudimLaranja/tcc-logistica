@@ -25,7 +25,7 @@ function Card({
 	children = (<></>),
 	footer_color = "bg-secundaria",
 	bg_color = "bg-primaria",
-	icon_size = "size-2/3",
+	icon_size = "size-2/4",
 	text_format = "",
 	count = 0,
 	...props
@@ -61,9 +61,9 @@ function Card({
 						})
 				}
 				<div className={`font-bold ${text_format}`}>
-					<h1 className={`text-2xl text-nowrap`}>{nome}</h1>
-					<h2 className="text-xl">{subTitulo}</h2>
-				<h1 className="text-4xl">{count}</h1>
+					<h1 className={`text-xl text-nowrap`}>{nome}</h1>
+					<h2 className="text-lg">{subTitulo}</h2>
+				<h1 className="text-2xl">{count}</h1>
 				</div>
 			</div>
 			{children}
@@ -80,7 +80,7 @@ function HubAdmin(): ReactNode {
 
 
 				<div className="w-full text-white mt-10 items-center">
-					<Outline><h1 className="text-4xl ml-10">Bem vindo(a) Admin!</h1></Outline>
+					<Outline><h1 className="text-4xl ml-10">Bem vindo(a) João Felipe!</h1></Outline>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 						<Card nome="Crítico" bg_color={`bg-red-700`} footer_color={`bg-red-900`} icon={<OctagonX />} count={1}/>
 						<Card nome="Alta" bg_color={`bg-orange-700`} footer_color={`bg-orange-900`} icon={<CircleX />} />
@@ -93,11 +93,7 @@ function HubAdmin(): ReactNode {
 						<Card nome="Descartado" subTitulo="status" bg_color={`bg-gray-400`} footer_color={`bg-gray-600`} icon={<ListX />} />
 
 					</div>
-					<Box className="text-white">
 
-						<h1>graficos vão aqui</h1>
-
-					</Box>
 					<Footer />
 				</div>
 			</div>

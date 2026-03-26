@@ -1,6 +1,5 @@
 import { type ReactNode } from "react";
 import Box from "./box";
-import Logo from "./logo";
 import { Link } from "react-router-dom";
 import { ChartColumnIncreasing, Home,Star,Ticket,Cog,LogOut, User, ShelvingUnit } from "lucide-react";
 
@@ -24,7 +23,7 @@ function SideButton({
 		<li
 			className={`${flip ? "bg-primaria" : "bg-secundaria"} p-3 hover:scale-110 hover:bg-contraste-3 hover:text-black hover:rounded-xl transition-all`}
 		>
-			<Link to={to} className="flex items-center text-3xl gap-3">
+			<Link to={to} className="flex items-center text-xl gap-3">
 				{icon}
 				{nome}
 				{children}
@@ -45,12 +44,13 @@ function Sidebar(): ReactNode {
 		text-white
 `}
 		>
-			<Box className={`bg-terciaria h-9/10`}>
-				<h1 className="flex items-center text-5xl gap-5">
-					<Logo className="size-30" />
-					Admin
+			<Box className={`bg-terciaria h-9/10 overflow-scroll`}>
+				<h1 className="flex items-center text-4xl gap-5">
+					<img src="/tcc-logistica/imgs/joao.jpeg" alt="foto de perfil" className="size-20 rounded-full"/>
+
+					João Felipe
 				</h1>
-				<nav>
+				<nav className="-translate-y-5">
 					<ul className="flex flex-col mx-3 gap-5">
 						<Fliper>
 							<SideButton nome="Home" icon={<Home />} to="/" />

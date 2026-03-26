@@ -3,16 +3,13 @@ import { Message } from "../../components/message";
 import Cozinha from "../../assets/cozinha";
 import Highlight from "../../components/highlight";
 import { 
-    mesas_necessarias, 
-    fogoes_necessarios, 
     Precos, 
     preco_total
 } from "../../global";
 
 function Estrategia(): ReactNode {
-    // Como preco_total no seu global já vem multiplicado por 100 (centavos), 
-    // dividimos por 100 para a formatação de moeda funcionar corretamente.
-    const valorFinalEvento = preco_total / 100;
+
+    const valorFinalEvento = preco_total;
 
     return (
         <div className="flex flex-col gap-4">
@@ -45,7 +42,7 @@ function Estrategia(): ReactNode {
             {/* Layout da Cozinha */}
             <div className="flex flex-col items-center justify-center bg-secundaria p-8 rounded-4xl my-6 border border-white/5">
                 <h2 className="mb-4 font-bold text-xl text-white uppercase tracking-tighter">Workflow da Cozinha</h2>
-                <div className="w-full max-w-4xl shadow-2xl">
+                <div className="">
                     <Cozinha />
                 </div>
                 <p className="mt-4 text-xs text-gray-400 italic">
@@ -53,15 +50,6 @@ function Estrategia(): ReactNode {
                 </p>
             </div>
 
-            <Message user={2}>
-                No mapa, vemos as <Highlight>{mesas_necessarias} mesas</Highlight> organizadas:
-                <ul className="list-disc ml-10 mt-2">
-                    <li><b>Estação 1:</b> Descongelamento e abertura.</li>
-                    <li><b>Estação 2:</b> Montagem (Molho e Ingredientes).</li>
-                    <li><b>Estação 3:</b> Cozimento com os <Highlight>{fogoes_necessarios} fornos a lenha</Highlight>.</li>
-                    <li><b>Estação 4:</b> Controle de qualidade e expedição.</li>
-                </ul>
-            </Message>
 
             <Message user={4} isPublic>
                 Carlos Carvalho, nossa logística está pronta para atender seus convidados com a máxima eficiência. 

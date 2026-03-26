@@ -29,7 +29,7 @@ function Apresentacao(): ReactNode {
 				<Highlight>Logística</Highlight> podemos conseguir!
 			</Message>
 			<Message user={4}>
-				Eu tenho uma <Highlight>ideia</Highlight> sobre como podemos conseguir
+				Eu tenho uma <Highlight>proposta</Highlight> sobre como podemos conseguir
 				realizar esse pedido mas precisarei perguntar algumas coisas para o
 				cliente.
 			</Message>
@@ -75,7 +75,7 @@ function Apresentacao(): ReactNode {
 				.
 			</Message>
 			<Message user={2}>
-				Então podemos usar o espaço para preparar as pizzas?
+				Então podemos usar o espaço do cliente para preparar as pizzas?
 			</Message>
 			<Message user={4}>Exato!</Message>
 			<Message user={0}>
@@ -87,7 +87,7 @@ function Apresentacao(): ReactNode {
 				lá.
 			</Message>
 			<Message user={3}>
-				E pedir uma entrega especial para os nossos fornecedores para o endereço
+				E pedir uma entrega just in time para os nossos fornecedores para o endereço
 				do salão de festas.
 			</Message>
 			<Message user={0}>

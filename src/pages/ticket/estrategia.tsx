@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { Message } from "../../components/message";
-import Cozinha from "../../assets/cozinha";
 import Highlight from "../../components/highlight";
 import { 
     Precos, 
@@ -43,7 +42,7 @@ function Estrategia(): ReactNode {
             <div className="flex flex-col items-center justify-center bg-secundaria p-8 rounded-4xl my-6 border border-white/5">
                 <h2 className="mb-4 font-bold text-xl text-white uppercase tracking-tighter">Workflow da Cozinha</h2>
                 <div className="">
-                    <Cozinha />
+                    <img src="/tcc-logistica/imgs/cozinha.svg" alt="Layout da cozinha"/>
                 </div>
                 <p className="mt-4 text-xs text-gray-400 italic">
                     Legenda: Fluxo contínuo das massas até a expedição final.

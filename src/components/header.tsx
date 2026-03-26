@@ -67,7 +67,7 @@ function Header({pagina}:PropsHeader):ReactNode {
 					`}
 						id="titulo_container"
 					>
-						<h1 className={titulos}>Papa's Pizzaria</h1>
+						<h1 className={titulos}>Pizzaria Santos Dumont</h1>
 					</div>
 					<nav className="flex gap-10 mr-10">
 						<button className={buttons} onClick={toSobre}>

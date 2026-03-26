@@ -74,7 +74,8 @@ function Sobre(): ReactNode {
 					<Box className="bg-secundaria" style={{ zIndex: 10 }}>
 						<h1 className="text-2xl bg-terciaria font-bold">Nossa hístoria</h1>
 						<p className="pt-0 mt-0">
-							A Pizzaria "Papa's Pizzaria" foi fundada dos sonhos de quatro
+							A Pizzaria Santos Dumont foi fundada dos sonhos de quatro
+
 							associados com o objetivo de fornecer pizza de qualidade para o
 							povo. Nossa pizzaria é um lugar para todos poderem desfrutar de
 							nossos produtos por preços acessíveis ao consumidor. Fundada em

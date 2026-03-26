@@ -70,8 +70,8 @@ function Sobre(): ReactNode {
 					Sobre Nós
 				</h1>
 
-				<div className="flex *:w-full -mt-10">
-					<Box className="bg-secundaria" style={{ zIndex: 10 }}>
+				<div className="flex md:*:w-1/2 md:flex-row flex-col">
+					<Box className="bg-secundaria w-full" style={{ zIndex: 10 }}>
 						<h1 className="text-2xl bg-terciaria font-bold">Nossa hístoria</h1>
 						<p className="pt-0 mt-0">
 							A Pizzaria Santos Dumont foi fundada dos sonhos de quatro
@@ -88,7 +88,7 @@ function Sobre(): ReactNode {
 						</p>
 					</Box>
 					<img
-						className="border-white border-3 -ml-30 mt-10"
+						className="border-white border-3 mt-10"
 						style={{ zIndex: 0 }}
 						src={`/${main_endpoint}/imgs/fachada.jpg`}
 						alt=""
@@ -104,7 +104,9 @@ function Sobre(): ReactNode {
 						Programador e game dev amador. Atualment estudando logistica no
 						Senai para trabalhar para a embraer
 					</Credito>
-					<Credito nome="Felipe Martins"></Credito>
+					<Credito nome="Felipe Martins" image="/imgs/felipem.jpeg">
+						Formado em Gestão de T.I e pós graduado em sistemas da informação,Atualmente estudando no Senai para trabalhar na embraer
+					</Credito>
 					<Credito nome="Lucas" image="/imgs/lucas.jpeg"></Credito>
 					<Credito nome="Paulo" image="/imgs/paulo.jpeg"></Credito>
 					<Credito nome="Felipe Marques"></Credito>

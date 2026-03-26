@@ -29,6 +29,7 @@ function Message({ children = <h1>Message content</h1>, user = Users.JOAO, isPub
 		case Users.JOAO: return "/joao.jpeg";
 		case Users.LUCAS: return "/lucas.jpeg";
 		case Users.PAULO: return "/paulo.jpeg";
+		case Users.FELIPE_MARTINS: return "/felipem.jpeg";
 		default: return "/missing.jpeg";
 	}})();
 

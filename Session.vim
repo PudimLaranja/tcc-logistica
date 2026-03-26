@@ -9,14 +9,17 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 let s:shortmess_save = &shortmess
 set shortmess+=aoO
-badd +182 src/pages/ticket/index.tsx
-badd +10 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/global.ts
-badd +14 ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/components/table.tsx
+badd +102 src/pages/ticket/index.tsx
+badd +139 src/global.ts
+badd +19 src/components/table.tsx
+badd +103 src/pages/ticket/apresentacao.tsx
+badd +18 src/components/highlight.tsx
+badd +33 src/pages/ticket/calculos.tsx
 argglobal
 %argdel
 argglobal
 enew
-balt ~/Documentos/Embraer/curso/docs/trabalho_pizzaria/src/global.ts
+balt src/pages/ticket/index.tsx
 setlocal foldmethod=manual
 setlocal foldexpr=0
 setlocal foldmarker={{{,}}}
@@ -38,6 +41,7 @@ if filereadable(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
 set hlsearch
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
